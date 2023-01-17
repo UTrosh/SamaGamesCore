@@ -23,29 +23,13 @@ configurations.all {
 
 repositories {
     mavenCentral()
-
-    maven { url "http://maven.samagames.net/public/" }
-
     maven {
-        url "http://maven.samagames.net/developpers/"
-        credentials {
-            username sguser
-            password sgpass
-        }
-    }
-
-    maven {
-        url "http://maven.samagames.net/network/"
-        credentials {
-            username sguser
-            password sgpass
-        }
+        url "http://maven.elmakers.com/repository/"
     }
 }
 
 dependencies {
-    compile(group: 'net.samagames', name: 'SamaGamesAPI', version: '5.0.0', changing: true)
-    compile(group: 'net.samagames', name: 'PersistanceAPI', version: '1.1.0', changing: true)
+    compile fileTree(dir: 'libs', include: '*.jar')
     compile(group: 'redis.clients', name: 'jedis', version: '2.9.0')
     compile(group: 'in.ashwanthkumar', name: 'slack-java-webhook', version: '0.0.7')
 

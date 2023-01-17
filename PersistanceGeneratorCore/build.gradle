@@ -17,28 +17,11 @@ repositories {
 
     mavenLocal()
 
-    maven { url "http://maven.samagames.net/public/" }
-
-    maven {
-        url "http://maven.samagames.net/developpers/"
-        credentials {
-            username sguser
-            password sgpass
-        }
-    }
-
-    maven {
-        url "http://maven.samagames.net/network/"
-        credentials {
-            username sguser
-            password sgpass
-        }
-    }
+    maven { url "http://maven.elmakers.com/repository/" }
 }
 
 dependencies {
-    compile group: 'net.samagames', name: 'PersistanceAPI', version: '1.1.0'
-    compile group: 'net.samagames', name: 'SamaGamesAPI', version: '4.1.0', changing: true
+    compile fileTree(dir: '../libs', include: '*.jar')
     compile group: 'com.squareup', name: 'javapoet', version: '1.6.1'
 }
 
